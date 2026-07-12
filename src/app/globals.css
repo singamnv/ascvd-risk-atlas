@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/*
+ * ASCVD Risk Factor Atlas — cool blue-grey light theme, indigo primary.
+ * Design tokens shared with the CoronaryAtlas system; hue is reserved for the
+ * evidence grades (A-D) and the 15 risk-factor categories.
+ */
+:root {
+  --bg: #f7f9fd;
+  --bg-warm: #faf9f5;
+  --panel: #ffffff;
+  --panel-2: #f0f3f9;
+  --panel-3: #eef2f9;
+  --border: #e2e8f4;
+  --border-2: #dbe3ef;
+  --text: #0b1220;
+  --text-2: #31405c;
+  --muted: #64748b;
+  --muted-2: #8a97ad;
+  --muted-3: #9aa6bb;
+
+  --accent: #6366f1;
+  --accent-2: #22d3ee;
+  --accent-grad: linear-gradient(135deg, #6366f1, #22d3ee);
+
+  --row-hover: #f2f5fb;
+  --hairline: #eef2f9;
+  --track: rgba(11, 18, 32, 0.06);
+  --grid: rgba(11, 18, 32, 0.07);
+
+  --shadow-sm: 0 1px 2px rgba(30, 41, 90, 0.06);
+  --shadow-card: 0 18px 44px -30px rgba(30, 41, 90, 0.5), inset 0 1px 0 #fff;
+  --shadow-float: 0 30px 70px -40px rgba(30, 41, 90, 0.4), inset 0 1px 0 #fff;
+
+  --r-pill: 100px;
+  --r-lg: 16px;
+  --r-md: 12px;
+  --r-sm: 10px;
+
+  /* evidence grade hues */
+  --grade-A: #16a34a;
+  --grade-B: #0891b2;
+  --grade-C: #d97706;
+  --grade-D: #94a3b8;
+
+  --ff-body: var(--font-body), system-ui, -apple-system, sans-serif;
+  --ff-display: var(--font-display), var(--ff-body);
+  --ff-mono: var(--font-mono), ui-monospace, monospace;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text-2);
+  font-family: var(--ff-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+* { box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
+
+.container-x { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+.mono-kicker {
+  font-family: var(--ff-mono);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.font-display { font-family: var(--ff-display); }
+.font-mono { font-family: var(--ff-mono); }
+
+/* category accent colors — one hue per taxonomy category */
+.cat-lipids               { --c: #f59e0b; }
+.cat-blood_pressure       { --c: #ef4444; }
+.cat-glycemic_metabolic   { --c: #f97316; }
+.cat-anthropometric       { --c: #eab308; }
+.cat-inflammatory_immune  { --c: #ec4899; }
+.cat-renal                { --c: #14b8a6; }
+.cat-hemostatic           { --c: #dc2626; }
+.cat-lifestyle_behavioral { --c: #22c55e; }
+.cat-genetic_familial     { --c: #8b5cf6; }
+.cat-demographic_social   { --c: #64748b; }
+.cat-psychosocial         { --c: #a855f7; }
+.cat-imaging_subclinical  { --c: #06b6d4; }
+.cat-comorbid_conditions  { --c: #6366f1; }
+.cat-environmental        { --c: #84cc16; }
+.cat-novel_biomarkers     { --c: #3b82f6; }
+
+/* grade pill */
+.grade-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 6px; font-weight: 700;
+  font-family: var(--ff-mono); font-size: 12px; color: #fff;
+}
+.grade-A { background: var(--grade-A); }
+.grade-B { background: var(--grade-B); }
+.grade-C { background: var(--grade-C); }
+.grade-D { background: var(--grade-D); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-family: var(--ff-mono); padding: 3px 9px;
+  border-radius: var(--r-pill); border: 1px solid var(--border-2);
+  background: var(--panel-2); color: var(--text-2); white-space: nowrap;
+}
+.chip-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--muted)); }
+
+.card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.table-scroll { overflow-x: auto; }
+
+/* app bar */
+.app-bar {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(255,255,255,0.86); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 22px;
+  padding: 12px 24px;
+}
+.nav-link { font-size: 14px; color: var(--muted); font-weight: 500; transition: color .15s; }
+.nav-link:hover, .nav-link[data-active="true"] { color: var(--accent); }
+
+/* tables */
+.data-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+.data-table thead th {
+  position: sticky; top: 0; z-index: 5; background: var(--panel-2);
+  text-align: left; font-family: var(--ff-mono); font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted);
+  padding: 10px 12px; border-bottom: 1px solid var(--border-2); cursor: pointer;
+  user-select: none; white-space: nowrap;
+}
+.data-table thead th:hover { color: var(--accent); }
+.data-table tbody td { padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: middle; }
+.data-table tbody tr:hover { background: var(--row-hover); }
+
+/* form controls */
+.field-input, .field-select {
+  background: var(--panel-2); border: 1px solid var(--border);
+  color: var(--text); border-radius: 10px; padding: 9px 12px; font-size: 14px;
+  font-family: var(--ff-body); outline: none; transition: border-color .15s, box-shadow .15s;
+}
+.field-input:focus, .field-select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99,102,241,0.14); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+  background: var(--panel-2); border: 1px solid var(--border-2); color: var(--text-2);
+  border-radius: var(--r-pill); padding: 7px 14px; font-size: 13px; font-weight: 500;
+  font-family: var(--ff-body); transition: all .15s;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn[data-active="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+.site-footer { border-top: 1px solid var(--border); background: var(--panel); margin-top: 48px; }
+.site-footer-inner { display: flex; flex-wrap: wrap; gap: 12px 48px; padding: 28px 24px; justify-content: space-between; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 900px) { .nav-desktop { display: none !important; } }
+@media (max-width: 640px) { .container-x { padding-left: 16px; padding-right: 16px; } }
+@media (max-width: 820px) { .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; } .table-scroll table { min-width: 900px; } }

@@ -1,0 +1,1867 @@
+{
+ "description": "Landscape of established ASCVD/CVD risk calculators, with input variables mapped onto the ASCVD Risk Factor Atlas factor set, coverage metrics, ranking, and evidence-grounded strengths/weaknesses.",
+ "n_calculators": 17,
+ "ranking_criteria": "Primary: number of strongly-evidenced (grade A/B) atlas factors covered; tiebreak: total factors covered, then distinct categories covered.",
+ "atlas_reference": {
+  "n_factors": 997,
+  "n_categories": 15,
+  "grade_counts": {
+   "A": 87,
+   "B": 48,
+   "C": 260,
+   "D": 602
+  }
+ },
+ "calculators": [
+  {
+   "calc_id": "qrisk3",
+   "name": "QRISK3",
+   "full_name": "QRISK3 cardiovascular risk algorithm",
+   "year": 2017,
+   "region": "United Kingdom",
+   "population": "Adults 25-84 without prior CVD (UK primary care, QResearch)",
+   "outcome_predicted": "CVD (CHD, stroke, TIA)",
+   "time_horizon": "10-year",
+   "n_inputs": 22,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Ethnicity (9 groups)",
+     "rf_id": "race-ethnicity",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Townsend deprivation score",
+     "rf_id": "social-deprivation",
+     "category": "demographic_social",
+     "note": "area deprivation index -> social-deprivation"
+    },
+    {
+     "label": "Smoking status",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Diabetes (type 1)",
+     "rf_id": "type-1-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Diabetes (type 2)",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol : HDL ratio",
+     "rf_id": "total-cholesterol-to-hdl-ratio",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "SBP variability (std dev)",
+     "rf_id": null,
+     "category": null,
+     "note": "derived variability metric; not represented as a discrete atlas factor"
+    },
+    {
+     "label": "BMI",
+     "rf_id": "body-mass-index",
+     "category": "anthropometric",
+     "note": ""
+    },
+    {
+     "label": "Treated hypertension",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Family history of premature CHD",
+     "rf_id": "family-history-of-premature-coronary-heart-disease",
+     "category": "genetic_familial",
+     "note": ""
+    },
+    {
+     "label": "Atrial fibrillation",
+     "rf_id": "atrial-fibrillation",
+     "category": "comorbid_conditions",
+     "note": ""
+    },
+    {
+     "label": "Chronic kidney disease (stage 3-5)",
+     "rf_id": "chronic-kidney-disease",
+     "category": "renal",
+     "note": ""
+    },
+    {
+     "label": "Rheumatoid arthritis",
+     "rf_id": "rheumatoid-arthritis",
+     "category": "inflammatory_immune",
+     "note": ""
+    },
+    {
+     "label": "Systemic lupus erythematosus",
+     "rf_id": "systemic-lupus-erythematosus",
+     "category": "inflammatory_immune",
+     "note": ""
+    },
+    {
+     "label": "Migraine",
+     "rf_id": "migraine",
+     "category": "comorbid_conditions",
+     "note": ""
+    },
+    {
+     "label": "Severe mental illness",
+     "rf_id": null,
+     "category": null,
+     "note": "schizophrenia/bipolar/severe depression; no discrete atlas factor (depression exists but SMI broader)"
+    },
+    {
+     "label": "Atypical antipsychotic use",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Regular corticosteroid use",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Erectile dysfunction (men)",
+     "rf_id": "erectile-dysfunction",
+     "category": "comorbid_conditions",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 17,
+   "n_categories_covered": 10,
+   "n_strong_covered": 14,
+   "categories_covered": [
+    "anthropometric",
+    "blood_pressure",
+    "comorbid_conditions",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "inflammatory_immune",
+    "lifestyle_behavioral",
+    "lipids",
+    "renal"
+   ],
+   "coverage_rank": 1,
+   "strengths": [
+    "Broadest input set of any established score: ethnicity (9 groups), deprivation, and multiple comorbidities",
+    "Includes CKD, atrial fibrillation, RA, SLE, migraine, severe mental illness, corticosteroids, antipsychotics, erectile dysfunction",
+    "Incorporates SBP variability and family history; derived/validated in millions of UK primary-care patients",
+    "Captures type 1 and type 2 diabetes separately"
+   ],
+   "weaknesses": [
+    "UK primary-care-derived; requires recalibration for other health systems",
+    "Several inputs are treatment/medication flags (steroids, antipsychotics, treated HTN) rather than biology",
+    "No lipid subfractions beyond TC:HDL ratio, no renal biomarker values, no imaging/CAC",
+    "Omits Lp(a), hs-CRP, and other novel biomarkers"
+   ],
+   "references": [
+    {
+     "pmid": "28536104",
+     "doi": "10.1136/bmj.j2099",
+     "title": "Development and validation of QRISK3 risk prediction algorithms",
+     "journal": "BMJ",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "calc_id": "jbs3",
+   "name": "JBS3",
+   "full_name": "Joint British Societies 3 (JBS3) lifetime risk / heart age calculator",
+   "year": 2014,
+   "region": "United Kingdom",
+   "population": "Adults without CVD (based on QRISK lifetime + JBS3 model)",
+   "outcome_predicted": "Lifetime CVD risk + 'heart age' (CHD, stroke)",
+   "time_horizon": "10-year and lifetime",
+   "n_inputs": 15,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Ethnicity",
+     "rf_id": "race-ethnicity",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Postcode deprivation",
+     "rf_id": "social-deprivation",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Smoking status",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "BMI",
+     "rf_id": "body-mass-index",
+     "category": "anthropometric",
+     "note": ""
+    },
+    {
+     "label": "Diabetes",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Family history of premature CHD",
+     "rf_id": "family-history-of-premature-coronary-heart-disease",
+     "category": "genetic_familial",
+     "note": ""
+    },
+    {
+     "label": "Rheumatoid arthritis",
+     "rf_id": "rheumatoid-arthritis",
+     "category": "inflammatory_immune",
+     "note": ""
+    },
+    {
+     "label": "Atrial fibrillation",
+     "rf_id": "atrial-fibrillation",
+     "category": "comorbid_conditions",
+     "note": ""
+    },
+    {
+     "label": "Chronic kidney disease",
+     "rf_id": "chronic-kidney-disease",
+     "category": "renal",
+     "note": ""
+    },
+    {
+     "label": "Treated hypertension",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    }
+   ],
+   "n_factors_covered": 14,
+   "n_categories_covered": 10,
+   "n_strong_covered": 12,
+   "categories_covered": [
+    "anthropometric",
+    "blood_pressure",
+    "comorbid_conditions",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "inflammatory_immune",
+    "lifestyle_behavioral",
+    "lipids",
+    "renal"
+   ],
+   "coverage_rank": 2,
+   "strengths": [
+    "Communicates lifetime risk and 'heart age' to motivate prevention in younger/low-10-year-risk people",
+    "Broad QRISK-derived inputs including ethnicity, deprivation, RA, AF, CKD",
+    "Emphasizes cumulative exposure and modifiable-factor manipulation"
+   ],
+   "weaknesses": [
+    "UK-derived (QRISK lineage); needs recalibration elsewhere",
+    "Lifetime projections are more assumption-dependent and less validated than 10-year risk",
+    "No lipid subfractions beyond TC/HDL, no renal biomarker values, no imaging/CAC or novel biomarkers"
+   ],
+   "references": [
+    {
+     "pmid": "24667225",
+     "doi": "10.1136/heartjnl-2014-305693",
+     "title": "Joint British Societies' consensus recommendations for the prevention of cardiovascular disease (JBS3)",
+     "journal": "Heart",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "calc_id": "prevent",
+   "name": "AHA PREVENT",
+   "full_name": "AHA Predicting Risk of CVD EVENTs equations",
+   "year": 2024,
+   "region": "United States",
+   "population": "Adults 30-79, general population (no prior CVD)",
+   "outcome_predicted": "Total CVD (ASCVD + heart failure)",
+   "time_horizon": "10-year and 30-year",
+   "n_inputs": 14,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Antihypertensive treatment",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "eGFR (CKD-EPI 2021)",
+     "rf_id": "estimated-glomerular-filtration-rate",
+     "category": "renal",
+     "note": ""
+    },
+    {
+     "label": "BMI",
+     "rf_id": "body-mass-index",
+     "category": "anthropometric",
+     "note": ""
+    },
+    {
+     "label": "Statin use",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "UACR (optional, full model)",
+     "rf_id": "albuminuria",
+     "category": "renal",
+     "note": ""
+    },
+    {
+     "label": "HbA1c (optional, full model)",
+     "rf_id": "hemoglobin-a1c",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Social Deprivation Index (optional)",
+     "rf_id": "social-deprivation",
+     "category": "demographic_social",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 12,
+   "n_categories_covered": 7,
+   "n_strong_covered": 10,
+   "categories_covered": [
+    "anthropometric",
+    "blood_pressure",
+    "demographic_social",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids",
+    "renal"
+   ],
+   "coverage_rank": 3,
+   "strengths": [
+    "Sex-specific, race-free (removed race, uses region/SDI instead) reducing race-based miscalibration",
+    "Adds kidney (eGFR, optional UACR) and metabolic (optional HbA1c) axes absent from PCE",
+    "Predicts total CVD including heart failure, not just ASCVD",
+    "Offers 10- and 30-year horizons; derived and validated in large contemporary US cohorts (>6 million)",
+    "Better calibrated to modern event rates than PCE (which overestimated)"
+   ],
+   "weaknesses": [
+    "Omits Lp(a), hs-CRP/inflammatory markers, and family history despite strong evidence",
+    "No coronary artery calcium or other subclinical imaging input",
+    "Optional UACR/HbA1c/SDI often unavailable in routine primary care, so base model dominates use",
+    "Still restricted to a small set of traditional factors; most graded A/B atlas factors are unused"
+   ],
+   "references": [
+    {
+     "pmid": "37947085",
+     "doi": "10.1161/CIRCULATIONAHA.123.067626",
+     "title": "Development and Validation of the American Heart Association's PREVENT Equations",
+     "journal": "Circulation",
+     "year": 2024
+    }
+   ]
+  },
+  {
+   "calc_id": "mesa",
+   "name": "MESA CHD Risk (with CAC)",
+   "full_name": "MESA 10-Year CHD Risk Score with Coronary Artery Calcium",
+   "year": 2015,
+   "region": "United States (multi-ethnic)",
+   "population": "Adults 45-85, 4 race/ethnic groups, no known CVD (MESA)",
+   "outcome_predicted": "Coronary heart disease (MI, CHD death, resuscitated arrest, revascularization)",
+   "time_horizon": "10-year",
+   "n_inputs": 12,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Race/ethnicity",
+     "rf_id": "race-ethnicity",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Lipid-lowering medication",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Antihypertensive medication",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Family history of heart attack",
+     "rf_id": "family-history-of-myocardial-infarction",
+     "category": "genetic_familial",
+     "note": ""
+    },
+    {
+     "label": "Coronary artery calcium (Agatston)",
+     "rf_id": "coronary-artery-calcium-score",
+     "category": "imaging_subclinical",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 10,
+   "n_categories_covered": 7,
+   "n_strong_covered": 8,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "imaging_subclinical",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 4,
+   "strengths": [
+    "Adds coronary artery calcium to traditional factors, substantially improving discrimination and reclassification",
+    "Multi-ethnic derivation (White, Black, Hispanic, Chinese); includes family history of MI",
+    "Directly quantifies subclinical atherosclerosis rather than inferring it"
+   ],
+   "weaknesses": [
+    "Requires a CT calcium scan (cost, radiation, access)",
+    "Predicts CHD rather than global CVD/stroke in the primary model",
+    "No renal, inflammatory, or lipid-subfraction inputs; medication flags used"
+   ],
+   "references": [
+    {
+     "pmid": "26449133",
+     "doi": "10.1016/j.jacc.2015.08.035",
+     "title": "10-Year Coronary Heart Disease Risk Prediction Using Coronary Artery Calcium and Traditional Risk Factors (MESA)",
+     "journal": "J Am Coll Cardiol",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "calc_id": "astrocharm",
+   "name": "Astro-CHARM",
+   "full_name": "Astronaut Cardiovascular Health and Risk Modification CAC calculator",
+   "year": 2018,
+   "region": "United States (multi-ethnic)",
+   "population": "Adults 40-65 without CVD (pooled MESA + Dallas Heart + others)",
+   "outcome_predicted": "Atherosclerotic CVD (hard CHD + stroke)",
+   "time_horizon": "10-year",
+   "n_inputs": 11,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Race/ethnicity",
+     "rf_id": "race-ethnicity",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Treated hypertension",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Family history of heart attack",
+     "rf_id": "family-history-of-myocardial-infarction",
+     "category": "genetic_familial",
+     "note": ""
+    },
+    {
+     "label": "Coronary artery calcium (Agatston)",
+     "rf_id": "coronary-artery-calcium-score",
+     "category": "imaging_subclinical",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 10,
+   "n_categories_covered": 7,
+   "n_strong_covered": 8,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "imaging_subclinical",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 5,
+   "strengths": [
+    "Pooled multi-cohort CAC-based ASCVD calculator; adds family history and CAC to standard factors",
+    "Predicts hard ASCVD (CHD + stroke) unlike CHD-only MESA score",
+    "Improves reclassification over factor-only models"
+   ],
+   "weaknesses": [
+    "Requires CT coronary calcium scan",
+    "Age range ~40-65; US-derived multi-ethnic pooled cohorts",
+    "No renal, inflammatory, or lipid-subfraction inputs"
+   ],
+   "references": [
+    {
+     "pmid": "30354651",
+     "doi": "10.1161/CIRCULATIONAHA.118.033505",
+     "title": "Astronaut Cardiovascular Health and Risk Modification (Astro-CHARM) Coronary Calcium ASCVD Risk Calculator",
+     "journal": "Circulation",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "calc_id": "score2_diabetes",
+   "name": "SCORE2-Diabetes",
+   "full_name": "SCORE2-Diabetes",
+   "year": 2023,
+   "region": "Europe (4 risk regions)",
+   "population": "Adults 40-69 with type 2 diabetes, no prior CVD",
+   "outcome_predicted": "Fatal + non-fatal CVD (MI, stroke)",
+   "time_horizon": "10-year",
+   "n_inputs": 11,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus (required)",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Age at diabetes diagnosis",
+     "rf_id": "diabetes-duration",
+     "category": "glycemic_metabolic",
+     "note": "captured as duration/age-at-onset; maps to diabetes-duration"
+    },
+    {
+     "label": "HbA1c",
+     "rf_id": "hemoglobin-a1c",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "eGFR",
+     "rf_id": "estimated-glomerular-filtration-rate",
+     "category": "renal",
+     "note": ""
+    },
+    {
+     "label": "Region calibration",
+     "rf_id": null,
+     "category": null,
+     "note": "population/geography calibration term, not an individual factor"
+    }
+   ],
+   "n_factors_covered": 10,
+   "n_categories_covered": 6,
+   "n_strong_covered": 8,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids",
+    "renal"
+   ],
+   "coverage_rank": 6,
+   "strengths": [
+    "Diabetes-specific European model adding HbA1c, age at diabetes diagnosis, and eGFR to SCORE2",
+    "Improves calibration in type 2 diabetes vs generic scores; competing-risk derivation"
+   ],
+   "weaknesses": [
+    "Restricted to type 2 diabetes population; European-calibrated",
+    "Omits albuminuria, Lp(a), inflammation, and imaging despite relevance in diabetes",
+    "Does not use BMI/waist or lipid subfractions beyond total/HDL"
+   ],
+   "references": [
+    {
+     "pmid": "37247330",
+     "doi": "10.1093/eurheartj/ehad260",
+     "title": "SCORE2-Diabetes: 10-year cardiovascular risk estimation in type 2 diabetes in Europe",
+     "journal": "Eur Heart J",
+     "year": 2023
+    }
+   ]
+  },
+  {
+   "calc_id": "reynolds",
+   "name": "Reynolds Risk Score",
+   "full_name": "Reynolds Risk Score (women 2007 / men 2008)",
+   "year": 2007,
+   "region": "United States",
+   "population": "Healthy adults without diabetes (Women's Health Study / men's cohort)",
+   "outcome_predicted": "CVD (MI, stroke, coronary revascularization, cardiovascular death)",
+   "time_horizon": "10-year",
+   "n_inputs": 9,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "hs-CRP",
+     "rf_id": "high-sensitivity-c-reactive-protein",
+     "category": "inflammatory_immune",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Parental history of MI before 60",
+     "rf_id": "family-history-of-premature-coronary-heart-disease",
+     "category": "genetic_familial",
+     "note": ""
+    },
+    {
+     "label": "HbA1c (if diabetic; women model)",
+     "rf_id": "hemoglobin-a1c",
+     "category": "glycemic_metabolic",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 9,
+   "n_categories_covered": 7,
+   "n_strong_covered": 8,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "inflammatory_immune",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 7,
+   "strengths": [
+    "First major score to add hs-CRP and family history to standard factors, improving reclassification",
+    "Sex-specific; validated in healthy non-diabetic cohorts"
+   ],
+   "weaknesses": [
+    "Derived largely in healthcare-professional cohorts (Women's Health Study), limiting generalizability",
+    "Excludes people with diabetes in original derivation",
+    "Small input set; no renal, ethnicity, deprivation, or imaging inputs",
+    "Requires hs-CRP which is not universally measured"
+   ],
+   "references": [
+    {
+     "pmid": "17299196",
+     "doi": "10.1001/jama.297.6.611",
+     "title": "Development and validation of improved algorithms for the assessment of global cardiovascular risk in women (Reynolds Risk Score)",
+     "journal": "JAMA",
+     "year": 2007
+    },
+    {
+     "pmid": "18997194",
+     "doi": "10.1161/CIRCULATIONAHA.108.814251",
+     "title": "C-reactive protein and parental history improve global cardiovascular risk prediction: the Reynolds Risk Score for men",
+     "journal": "Circulation",
+     "year": 2008
+    }
+   ]
+  },
+  {
+   "calc_id": "procam",
+   "name": "PROCAM",
+   "full_name": "Prospective Cardiovascular Munster (PROCAM) score",
+   "year": 2002,
+   "region": "Germany",
+   "population": "Middle-aged men 35-65 (PROCAM cohort; later female/quick versions)",
+   "outcome_predicted": "Acute coronary events (MI, coronary death)",
+   "time_horizon": "10-year",
+   "n_inputs": 8,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "LDL cholesterol",
+     "rf_id": "ldl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Triglycerides",
+     "rf_id": "triglycerides",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Family history of premature MI",
+     "rf_id": "family-history-of-premature-coronary-heart-disease",
+     "category": "genetic_familial",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 8,
+   "n_categories_covered": 6,
+   "n_strong_covered": 8,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 8,
+   "strengths": [
+    "Uses full lipid panel including LDL and triglycerides (most scores omit TG)",
+    "Includes family history of premature MI; well validated for coronary events"
+   ],
+   "weaknesses": [
+    "Derived in middle-aged German men; original model not applicable to women or other populations without recalibration",
+    "Predicts coronary events only (not stroke/global CVD)",
+    "No renal, ethnicity, deprivation, imaging, or inflammatory inputs"
+   ],
+   "references": [
+    {
+     "pmid": "11804985",
+     "doi": "10.1161/hc0302.102575",
+     "title": "Simple scoring scheme for calculating the risk of acute coronary events (PROCAM)",
+     "journal": "Circulation",
+     "year": 2002
+    }
+   ]
+  },
+  {
+   "calc_id": "assign",
+   "name": "ASSIGN",
+   "full_name": "ASSIGN cardiovascular risk score (SIGN/Scotland)",
+   "year": 2007,
+   "region": "Scotland / UK",
+   "population": "Adults 30-74 without CVD (Scottish Heart Health Extended Cohort)",
+   "outcome_predicted": "CVD (CHD + cerebrovascular)",
+   "time_horizon": "10-year",
+   "n_inputs": 10,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "SIMD deprivation score",
+     "rf_id": "social-deprivation",
+     "category": "demographic_social",
+     "note": "Scottish Index of Multiple Deprivation -> social-deprivation"
+    },
+    {
+     "label": "Family history of CVD",
+     "rf_id": "family-history-of-cardiovascular-disease",
+     "category": "genetic_familial",
+     "note": ""
+    },
+    {
+     "label": "Diabetes",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Rheumatoid arthritis",
+     "rf_id": "rheumatoid-arthritis",
+     "category": "inflammatory_immune",
+     "note": ""
+    },
+    {
+     "label": "Current smoking (cigarettes/day)",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 10,
+   "n_categories_covered": 7,
+   "n_strong_covered": 7,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "inflammatory_immune",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 9,
+   "strengths": [
+    "First score to formally add social deprivation (SIMD) and family history, targeting health inequalities",
+    "Includes rheumatoid arthritis; Scotland-calibrated"
+   ],
+   "weaknesses": [
+    "Scotland/UK-derived; limited external validation elsewhere",
+    "Small traditional-factor set otherwise; no renal, imaging, or inflammatory inputs",
+    "Largely superseded by QRISK in UK practice"
+   ],
+   "references": [
+    {
+     "pmid": "17090561",
+     "doi": "10.1136/hrt.2006.108167",
+     "title": "Adding social deprivation and family history to cardiovascular risk assessment: the ASSIGN score",
+     "journal": "Heart",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "calc_id": "chinapar",
+   "name": "China-PAR",
+   "full_name": "Prediction for ASCVD Risk in China (China-PAR)",
+   "year": 2016,
+   "region": "China",
+   "population": "Chinese adults >=35 without ASCVD (pooled Chinese cohorts)",
+   "outcome_predicted": "Atherosclerotic CVD (CHD death, nonfatal MI, fatal/nonfatal stroke)",
+   "time_horizon": "10-year and lifetime",
+   "n_inputs": 10,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Treated/untreated systolic BP",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Waist circumference",
+     "rf_id": "waist-circumference",
+     "category": "anthropometric",
+     "note": ""
+    },
+    {
+     "label": "Geographic region (North/South, urban/rural)",
+     "rf_id": null,
+     "category": null,
+     "note": "population/geography calibration term, not an individual factor"
+    },
+    {
+     "label": "Family history of ASCVD",
+     "rf_id": "family-history-of-cardiovascular-disease",
+     "category": "genetic_familial",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 9,
+   "n_categories_covered": 7,
+   "n_strong_covered": 7,
+   "categories_covered": [
+    "anthropometric",
+    "blood_pressure",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 10,
+   "strengths": [
+    "Calibrated to Chinese cohorts with geographic (North/South, urban/rural) adjustment and waist circumference",
+    "Predicts ASCVD (CHD + stroke) with 10-year and lifetime horizons; includes family history",
+    "Markedly better calibrated than PCE in Chinese populations"
+   ],
+   "weaknesses": [
+    "Population-specific to China; not transportable without recalibration",
+    "No lipid subfractions beyond TC/HDL, no renal, imaging, or inflammatory inputs",
+    "Relies on self-reported family history and regional strata"
+   ],
+   "references": [
+    {
+     "pmid": "27682885",
+     "doi": "10.1161/CIRCULATIONAHA.116.022367",
+     "title": "Predicting the 10-Year Risks of Atherosclerotic Cardiovascular Disease in Chinese Population (China-PAR)",
+     "journal": "Circulation",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "calc_id": "finrisk",
+   "name": "FINRISK",
+   "full_name": "FINRISK cardiovascular risk score",
+   "year": 2014,
+   "region": "Finland",
+   "population": "Adults 30-74 without CVD (Finnish population surveys)",
+   "outcome_predicted": "CVD (coronary + stroke)",
+   "time_horizon": "10-year",
+   "n_inputs": 9,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Family history of MI",
+     "rf_id": "family-history-of-myocardial-infarction",
+     "category": "genetic_familial",
+     "note": ""
+    },
+    {
+     "label": "BMI",
+     "rf_id": "body-mass-index",
+     "category": "anthropometric",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 9,
+   "n_categories_covered": 7,
+   "n_strong_covered": 7,
+   "categories_covered": [
+    "anthropometric",
+    "blood_pressure",
+    "demographic_social",
+    "genetic_familial",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 11,
+   "strengths": [
+    "Finland-calibrated with full traditional factors plus BMI and family history of MI",
+    "Well validated in serial Finnish population surveys"
+   ],
+   "weaknesses": [
+    "Finland-specific; requires recalibration elsewhere",
+    "No lipid subfractions beyond TC/HDL, no renal, deprivation, imaging, or inflammatory inputs",
+    "Largely a regional/national tool with limited international use"
+   ],
+   "references": [
+    {
+     "pmid": "25422363",
+     "doi": "10.1177/2047487314545350",
+     "title": "Forty-year trends in cardiovascular risk factors in Finland",
+     "journal": "Eur J Prev Cardiol",
+     "year": null,
+     "note": "PMID 25422363 is a FINRISK-cohort risk-factor-trends paper, not the derivation of the FINRISK risk function; the definitive FINRISK function derivation reference is not confirmed in this dataset."
+    }
+   ]
+  },
+  {
+   "calc_id": "pce",
+   "name": "ACC/AHA Pooled Cohort Equations",
+   "full_name": "2013 ACC/AHA Pooled Cohort Equations for ASCVD",
+   "year": 2013,
+   "region": "United States",
+   "population": "Adults 40-79, non-Hispanic White & African-American, no ASCVD",
+   "outcome_predicted": "Hard ASCVD (nonfatal MI, CHD death, fatal/nonfatal stroke)",
+   "time_horizon": "10-year",
+   "n_inputs": 9,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Race (White vs African-American)",
+     "rf_id": "race-ethnicity",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Treatment for hypertension",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 8,
+   "n_categories_covered": 5,
+   "n_strong_covered": 7,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 12,
+   "strengths": [
+    "First guideline-endorsed race- and sex-specific US equations; simple, widely implemented",
+    "Predicts hard ASCVD (MI, stroke) with 10-year horizon aligned to statin decisions"
+   ],
+   "weaknesses": [
+    "Overestimates risk in contemporary and higher-SES cohorts",
+    "Uses a binary Black/White race variable now considered scientifically problematic",
+    "Only 9 inputs; omits triglycerides, family history, CKD, inflammation, obesity, Lp(a)",
+    "Derived from older cohorts; poor transportability outside US non-Hispanic White/Black groups"
+   ],
+   "references": [
+    {
+     "pmid": "24222018",
+     "doi": "10.1161/01.cir.0000437741.48606.98",
+     "title": "2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk",
+     "journal": "Circulation",
+     "year": 2014
+    },
+    {
+     "pmid": "25190228",
+     "doi": "10.1016/j.jacc.2014.06.1186",
+     "title": "A systematic examination of the 2013 ACC/AHA pooled cohort risk assessment tool for ASCVD",
+     "journal": "J Am Coll Cardiol",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "calc_id": "who2019",
+   "name": "WHO CVD risk charts (2019)",
+   "full_name": "WHO/ISH 2019 revised cardiovascular disease risk charts (21 regions)",
+   "year": 2019,
+   "region": "Global (21 GBD regions)",
+   "population": "Adults 40-74 without CVD",
+   "outcome_predicted": "Fatal + non-fatal CVD (MI, stroke)",
+   "time_horizon": "10-year",
+   "n_inputs": 8,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol (laboratory model)",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "BMI (non-laboratory model)",
+     "rf_id": "body-mass-index",
+     "category": "anthropometric",
+     "note": ""
+    },
+    {
+     "label": "Region calibration",
+     "rf_id": null,
+     "category": null,
+     "note": "population/geography calibration term, not an individual factor"
+    }
+   ],
+   "n_factors_covered": 7,
+   "n_categories_covered": 6,
+   "n_strong_covered": 6,
+   "categories_covered": [
+    "anthropometric",
+    "blood_pressure",
+    "demographic_social",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 13,
+   "strengths": [
+    "Region-specific charts for 21 world regions; laboratory and non-laboratory (BMI-based) versions for low-resource settings",
+    "Globally applicable, endorsed for population-level screening"
+   ],
+   "weaknesses": [
+    "Chart-based with coarse risk categories rather than continuous individualized estimate",
+    "Very small input set; non-lab version drops cholesterol entirely",
+    "No family history, renal, imaging, or inflammatory inputs; limited discrimination"
+   ],
+   "references": [
+    {
+     "pmid": "31488387",
+     "doi": "10.1016/S2214-109X(19)30318-3",
+     "title": "World Health Organization cardiovascular disease risk charts: revised models to estimate risk in 21 regions",
+     "journal": "Lancet Glob Health",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "calc_id": "framingham2008",
+   "name": "Framingham (2008 general CVD)",
+   "full_name": "Framingham General Cardiovascular Risk Profile (D'Agostino 2008)",
+   "year": 2008,
+   "region": "United States",
+   "population": "Adults 30-74, no CVD (Framingham Heart Study)",
+   "outcome_predicted": "General CVD (CHD, stroke, PAD, heart failure)",
+   "time_horizon": "10-year",
+   "n_inputs": 8,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Treatment for hypertension",
+     "rf_id": null,
+     "category": null,
+     "note": "treatment/medication-use variable; not a factor in atlas"
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    }
+   ],
+   "n_factors_covered": 7,
+   "n_categories_covered": 5,
+   "n_strong_covered": 6,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 14,
+   "strengths": [
+    "Landmark, extensively validated general-CVD model covering CHD, stroke, PAD and heart failure",
+    "Simple office-based inputs; foundation for most later scores"
+   ],
+   "weaknesses": [
+    "Derived from a predominantly White suburban US cohort (Framingham); overestimates in many modern/European/Asian populations",
+    "No race/ethnicity, deprivation, renal, or inflammatory inputs",
+    "Dated event rates; largely superseded by PCE/PREVENT in the US"
+   ],
+   "references": [
+    {
+     "pmid": "18212285",
+     "doi": "10.1161/CIRCULATIONAHA.107.699579",
+     "title": "General cardiovascular risk profile for use in primary care: the Framingham Heart Study",
+     "journal": "Circulation",
+     "year": 2008
+    },
+    {
+     "pmid": "9603539",
+     "doi": "10.1161/01.cir.97.18.1837",
+     "title": "Prediction of coronary heart disease using risk factor categories (Framingham)",
+     "journal": "Circulation",
+     "year": 1998
+    }
+   ]
+  },
+  {
+   "calc_id": "score2_op",
+   "name": "SCORE2-OP",
+   "full_name": "SCORE2-Older Persons",
+   "year": 2021,
+   "region": "Europe (4 risk regions)",
+   "population": "Adults >=70 without prior CVD",
+   "outcome_predicted": "Fatal + non-fatal CVD (MI, stroke)",
+   "time_horizon": "5- and 10-year",
+   "n_inputs": 8,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Diabetes mellitus",
+     "rf_id": "type-2-diabetes-mellitus",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Region calibration",
+     "rf_id": null,
+     "category": null,
+     "note": "population/geography calibration term, not an individual factor"
+    }
+   ],
+   "n_factors_covered": 7,
+   "n_categories_covered": 5,
+   "n_strong_covered": 6,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 15,
+   "strengths": [
+    "Extends region-calibrated CVD estimation to adults >=70 where other scores are poorly calibrated",
+    "Accounts for competing mortality risk in older persons; adds diabetes as input"
+   ],
+   "weaknesses": [
+    "Still a small traditional-factor set; no lipfractions beyond total/HDL, no renal/imaging/inflammation",
+    "European-derived, needs recalibration elsewhere",
+    "Older-age discrimination is inherently modest"
+   ],
+   "references": [
+    {
+     "pmid": "34120185",
+     "doi": "10.1093/eurheartj/ehab312",
+     "title": "SCORE2-OP risk prediction algorithms: estimating incident CVD in older persons",
+     "journal": "Eur Heart J",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "calc_id": "score2",
+   "name": "SCORE2",
+   "full_name": "Systematic COronary Risk Evaluation 2",
+   "year": 2021,
+   "region": "Europe (4 risk regions)",
+   "population": "Adults 40-69 without prior CVD/diabetes",
+   "outcome_predicted": "Fatal + non-fatal CVD (MI, stroke)",
+   "time_horizon": "10-year",
+   "n_inputs": 8,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "HDL cholesterol",
+     "rf_id": "hdl-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Non-HDL cholesterol (derived)",
+     "rf_id": "non-hdl-cholesterol",
+     "category": "lipids",
+     "note": "derived: total minus HDL, primary predictor in model"
+    },
+    {
+     "label": "Region calibration",
+     "rf_id": null,
+     "category": null,
+     "note": "population/geography calibration term, not an individual factor"
+    }
+   ],
+   "n_factors_covered": 7,
+   "n_categories_covered": 4,
+   "n_strong_covered": 6,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 16,
+   "strengths": [
+    "Region-calibrated for 4 European risk areas; predicts both fatal AND non-fatal CVD (SCORE predecessor was fatal-only)",
+    "Derived and validated in very large European datasets with competing-risk methods",
+    "Uses non-HDL cholesterol, avoiding a separate triglyceride/LDL requirement"
+   ],
+   "weaknesses": [
+    "European-derived; requires recalibration outside Europe",
+    "Narrow input set (age, sex, smoking, SBP, lipids); no diabetes, renal, family history, or imaging",
+    "Age range 40-69 in base model (separate OP model needed for elderly)"
+   ],
+   "references": [
+    {
+     "pmid": "34120177",
+     "doi": "10.1093/eurheartj/ehab309",
+     "title": "SCORE2 risk prediction algorithms: new models to estimate 10-year risk of CVD in Europe",
+     "journal": "Eur Heart J",
+     "year": 2021
+    }
+   ]
+  },
+  {
+   "calc_id": "globorisk",
+   "name": "Globorisk",
+   "full_name": "Globorisk country-specific CVD risk score",
+   "year": 2015,
+   "region": "Global (country-recalibrated, 182 countries)",
+   "population": "Adults 40-74 without CVD",
+   "outcome_predicted": "Fatal + non-fatal CVD (CHD, stroke)",
+   "time_horizon": "10-year",
+   "n_inputs": 7,
+   "inputs": [
+    {
+     "label": "Age",
+     "rf_id": "age",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Sex",
+     "rf_id": "sex",
+     "category": "demographic_social",
+     "note": ""
+    },
+    {
+     "label": "Current smoking",
+     "rf_id": "cigarette-smoking",
+     "category": "lifestyle_behavioral",
+     "note": ""
+    },
+    {
+     "label": "Systolic blood pressure",
+     "rf_id": "systolic-blood-pressure",
+     "category": "blood_pressure",
+     "note": ""
+    },
+    {
+     "label": "Total cholesterol",
+     "rf_id": "total-cholesterol",
+     "category": "lipids",
+     "note": ""
+    },
+    {
+     "label": "Diabetes / fasting glucose",
+     "rf_id": "fasting-plasma-glucose",
+     "category": "glycemic_metabolic",
+     "note": ""
+    },
+    {
+     "label": "Country/region calibration",
+     "rf_id": null,
+     "category": null,
+     "note": "population/geography calibration term, not an individual factor"
+    }
+   ],
+   "n_factors_covered": 6,
+   "n_categories_covered": 5,
+   "n_strong_covered": 5,
+   "categories_covered": [
+    "blood_pressure",
+    "demographic_social",
+    "glycemic_metabolic",
+    "lifestyle_behavioral",
+    "lipids"
+   ],
+   "coverage_rank": 17,
+   "strengths": [
+    "Explicitly recalibrated to 182 countries using national risk-factor and mortality data",
+    "Designed for global/low-resource use; laboratory and office-based versions"
+   ],
+   "weaknesses": [
+    "Small traditional-factor set (age, sex, smoking, SBP, TC, glucose)",
+    "No HDL, renal, family history, imaging, or inflammatory inputs",
+    "Calibration depends on quality of country-level input data"
+   ],
+   "references": [
+    {
+     "pmid": "25819778",
+     "doi": "10.1016/S2213-8587(15)00081-9",
+     "title": "A novel risk score to predict cardiovascular disease risk in national populations (Globorisk)",
+     "journal": "Lancet Diabetes Endocrinol",
+     "year": 2015
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+  "umbrella": "ASCVD",
+  "full_name": "Atherosclerotic Cardiovascular Disease",
+  "definition": "A family of clinical conditions caused by atherosclerosis \u2014 the buildup of lipid-rich plaque in the arterial wall \u2014 leading to arterial narrowing, plaque rupture, thrombosis, and downstream ischemia or infarction of the tissue supplied. ASCVD is the shared pathological substrate underlying most heart attacks and ischemic strokes and is the endpoint that primary-prevention risk scores (PREVENT, Pooled Cohort Equations, SCORE2) are built to predict.",
+  "constituent_diseases": [
+    {"id": "chd", "name": "Coronary heart disease", "includes": ["Myocardial infarction (STEMI/NSTEMI)", "Acute coronary syndrome / unstable angina", "Stable angina", "Coronary revascularization (PCI/CABG)", "Coronary death"], "trait_seed": ["EFO_0001645 coronary artery disease", "MONDO_0005010 coronary artery disorder", "EFO_0000612 myocardial infarction"]},
+    {"id": "cbvd", "name": "Cerebrovascular disease (atherosclerotic)", "includes": ["Ischemic stroke", "Transient ischemic attack (TIA)", "Carotid atherosclerosis / stenosis"], "trait_seed": ["EFO_0000712 stroke", "HP_0002140 ischemic stroke", "EFO_1001976 ischemic stroke"]},
+    {"id": "pad", "name": "Peripheral artery disease", "includes": ["Lower-extremity PAD", "Intermittent claudication", "Critical limb ischemia", "Peripheral revascularization"], "trait_seed": ["EFO_0004265 peripheral artery disease", "MONDO_0018882 peripheral arterial disease"]},
+    {"id": "aortic", "name": "Aortic & other large-artery atherosclerosis", "includes": ["Abdominal aortic atherosclerosis/aneurysm (atherosclerotic)", "Renal artery stenosis (atherosclerotic)", "Mesenteric ischemia (atherosclerotic)"], "trait_seed": ["EFO_0004214 abdominal aortic aneurysm"]}
+  ],
+  "note_type2_exclusions": "Non-atherosclerotic cardiovascular disease is out of scope as a *disease endpoint* but its risk factors may overlap: heart failure without ischemia, atrial fibrillation, valvular disease, congenital heart disease, and Type 2 (supply-demand) MI. These are excluded as endpoints but relevant comorbid factors are retained when the literature reports them as ASCVD risk factors.",
+  "prevent_baseline": {
+    "name": "AHA PREVENT equations (2023)",
+    "reference": "AHA PREVENT equations (2023); full citation to be confirmed against harvested literature (PMID pending)",
+    "outcome": "10- and 30-year risk of total CVD (ASCVD + heart failure)",
+    "core_inputs": [
+      {"var": "age", "category": "demographic"},
+      {"var": "sex", "category": "demographic"},
+      {"var": "total_cholesterol", "category": "lipids"},
+      {"var": "hdl_cholesterol", "category": "lipids"},
+      {"var": "systolic_blood_pressure", "category": "blood_pressure"},
+      {"var": "bp_lowering_treatment", "category": "blood_pressure"},
+      {"var": "diabetes", "category": "glycemic_metabolic"},
+      {"var": "current_smoking", "category": "lifestyle_behavioral"},
+      {"var": "bmi", "category": "anthropometric"},
+      {"var": "egfr", "category": "renal"},
+      {"var": "statin_use", "category": "lipids"}
+    ],
+    "optional_inputs": [
+      {"var": "uacr", "category": "renal", "note": "urine albumin-creatinine ratio \u2014 full model"},
+      {"var": "hba1c", "category": "glycemic_metabolic", "note": "full model"},
+      {"var": "social_deprivation_index", "category": "demographic_social", "note": "full model, ZIP-level SDI"}
+    ],
+    "known_omissions_hypothesis": "PREVENT deliberately excludes race (unlike the Pooled Cohort Equations) and omits family history, lipoprotein(a), inflammatory markers (hs-CRP), coronary artery calcium, and many emerging factors \u2014 these are prime candidates for the gap analysis."
+  },
+  "pce_baseline": {
+    "name": "ACC/AHA Pooled Cohort Equations (2013)",
+    "core_inputs": ["age", "sex", "race", "total_cholesterol", "hdl_cholesterol", "systolic_blood_pressure", "bp_treatment", "diabetes", "current_smoking"]
+  }
+}

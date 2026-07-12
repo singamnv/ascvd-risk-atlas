@@ -1,0 +1,369 @@
+{
+ "n_factors": 997,
+ "n_prevent": 14,
+ "n_pce": 11,
+ "by_grade": {
+  "A": 87,
+  "B": 48,
+  "C": 260,
+  "D": 602
+ },
+ "by_category": {
+  "lipids": 49,
+  "blood_pressure": 41,
+  "glycemic_metabolic": 37,
+  "anthropometric": 44,
+  "inflammatory_immune": 89,
+  "renal": 24,
+  "hemostatic": 46,
+  "lifestyle_behavioral": 86,
+  "genetic_familial": 86,
+  "demographic_social": 37,
+  "psychosocial": 54,
+  "imaging_subclinical": 123,
+  "comorbid_conditions": 89,
+  "environmental": 50,
+  "novel_biomarkers": 142
+ },
+ "by_type": {
+  "lab_test": 328,
+  "disease": 148,
+  "genetic": 84,
+  "behavior": 138,
+  "physical_parameter": 164,
+  "imaging": 98,
+  "demographic": 37
+ },
+ "by_direction": {
+  "risk": 876,
+  "protective": 59,
+  "u_shaped": 8,
+  "mixed": 39,
+  "unclear": 15
+ },
+ "by_modifiable": {
+  "modifiable": 314,
+  "partially_modifiable": 445,
+  "non_modifiable": 238
+ },
+ "evidence_totals": {
+  "references": 19686,
+  "meta_analyses": 1274,
+  "distinct_articles": 6441,
+  "trial_links": 9919,
+  "gwas_links": 11714
+ },
+ "categories": [
+  {
+   "id": "lipids",
+   "name": "Lipids & Lipoproteins",
+   "short": "Lipids",
+   "order": 1,
+   "description": "Circulating lipids, lipoprotein particles, and apolipoproteins",
+   "n": 49,
+   "grades": {
+    "A": 11,
+    "C": 14,
+    "D": 24
+   },
+   "n_in_prevent": 2,
+   "n_strong": 11,
+   "n_with_genetic": 5,
+   "n_with_trials": 25
+  },
+  {
+   "id": "blood_pressure",
+   "name": "Blood Pressure & Hemodynamics",
+   "short": "BP",
+   "order": 2,
+   "description": "Arterial pressure, hypertension, and vascular hemodynamic measures",
+   "n": 41,
+   "grades": {
+    "A": 5,
+    "B": 2,
+    "C": 7,
+    "D": 27
+   },
+   "n_in_prevent": 1,
+   "n_strong": 7,
+   "n_with_genetic": 1,
+   "n_with_trials": 18
+  },
+  {
+   "id": "glycemic_metabolic",
+   "name": "Glycemic & Metabolic",
+   "short": "Metabolic",
+   "order": 3,
+   "description": "Glucose regulation, insulin resistance, and metabolic syndrome components",
+   "n": 37,
+   "grades": {
+    "A": 6,
+    "B": 3,
+    "C": 17,
+    "D": 11
+   },
+   "n_in_prevent": 2,
+   "n_strong": 9,
+   "n_with_genetic": 1,
+   "n_with_trials": 21
+  },
+  {
+   "id": "anthropometric",
+   "name": "Anthropometric & Body Composition",
+   "short": "Body",
+   "order": 4,
+   "description": "Physical body measurements and adiposity distribution",
+   "n": 44,
+   "grades": {
+    "A": 4,
+    "B": 3,
+    "C": 9,
+    "D": 28
+   },
+   "n_in_prevent": 1,
+   "n_strong": 7,
+   "n_with_genetic": 0,
+   "n_with_trials": 18
+  },
+  {
+   "id": "inflammatory_immune",
+   "name": "Inflammatory & Immune",
+   "short": "Inflammation",
+   "order": 5,
+   "description": "Systemic inflammation markers and immune/autoimmune conditions",
+   "n": 89,
+   "grades": {
+    "A": 11,
+    "B": 4,
+    "C": 20,
+    "D": 54
+   },
+   "n_in_prevent": 0,
+   "n_strong": 15,
+   "n_with_genetic": 2,
+   "n_with_trials": 33
+  },
+  {
+   "id": "renal",
+   "name": "Renal & Electrolyte",
+   "short": "Renal",
+   "order": 6,
+   "description": "Kidney function and related markers",
+   "n": 24,
+   "grades": {
+    "A": 5,
+    "C": 8,
+    "D": 11
+   },
+   "n_in_prevent": 2,
+   "n_strong": 5,
+   "n_with_genetic": 0,
+   "n_with_trials": 13
+  },
+  {
+   "id": "hemostatic",
+   "name": "Hemostatic & Thrombotic",
+   "short": "Hemostasis",
+   "order": 7,
+   "description": "Coagulation, platelet, and thrombosis-related factors",
+   "n": 46,
+   "grades": {
+    "A": 2,
+    "B": 2,
+    "C": 16,
+    "D": 26
+   },
+   "n_in_prevent": 0,
+   "n_strong": 4,
+   "n_with_genetic": 0,
+   "n_with_trials": 19
+  },
+  {
+   "id": "lifestyle_behavioral",
+   "name": "Lifestyle & Behavioral",
+   "short": "Lifestyle",
+   "order": 8,
+   "description": "Modifiable behaviors and exposures",
+   "n": 86,
+   "grades": {
+    "A": 7,
+    "B": 6,
+    "C": 22,
+    "D": 51
+   },
+   "n_in_prevent": 1,
+   "n_strong": 13,
+   "n_with_genetic": 0,
+   "n_with_trials": 33
+  },
+  {
+   "id": "genetic_familial",
+   "name": "Genetic & Family History",
+   "short": "Genetic",
+   "order": 9,
+   "description": "Inherited risk: family history, monogenic conditions, polygenic scores, and GWAS loci",
+   "n": 86,
+   "grades": {
+    "A": 4,
+    "B": 4,
+    "C": 14,
+    "D": 64
+   },
+   "n_in_prevent": 0,
+   "n_strong": 8,
+   "n_with_genetic": 7,
+   "n_with_trials": 15
+  },
+  {
+   "id": "demographic_social",
+   "name": "Demographic & Social",
+   "short": "Social",
+   "order": 10,
+   "description": "Non-modifiable demographics and social determinants of health",
+   "n": 37,
+   "grades": {
+    "A": 6,
+    "B": 2,
+    "C": 9,
+    "D": 20
+   },
+   "n_in_prevent": 5,
+   "n_strong": 8,
+   "n_with_genetic": 0,
+   "n_with_trials": 13
+  },
+  {
+   "id": "psychosocial",
+   "name": "Psychosocial & Mental Health",
+   "short": "Psychosocial",
+   "order": 11,
+   "description": "Psychological and psychiatric exposures",
+   "n": 54,
+   "grades": {
+    "A": 5,
+    "B": 1,
+    "C": 14,
+    "D": 34
+   },
+   "n_in_prevent": 0,
+   "n_strong": 6,
+   "n_with_genetic": 0,
+   "n_with_trials": 8
+  },
+  {
+   "id": "imaging_subclinical",
+   "name": "Imaging & Subclinical Disease",
+   "short": "Imaging",
+   "order": 12,
+   "description": "Imaging-detected subclinical atherosclerosis and structural markers",
+   "n": 123,
+   "grades": {
+    "A": 5,
+    "B": 2,
+    "C": 29,
+    "D": 87
+   },
+   "n_in_prevent": 0,
+   "n_strong": 7,
+   "n_with_genetic": 0,
+   "n_with_trials": 45
+  },
+  {
+   "id": "comorbid_conditions",
+   "name": "Comorbid Conditions",
+   "short": "Comorbid",
+   "order": 13,
+   "description": "Diseases and clinical conditions that elevate ASCVD risk",
+   "n": 89,
+   "grades": {
+    "A": 6,
+    "B": 5,
+    "C": 39,
+    "D": 39
+   },
+   "n_in_prevent": 0,
+   "n_strong": 11,
+   "n_with_genetic": 0,
+   "n_with_trials": 52
+  },
+  {
+   "id": "environmental",
+   "name": "Environmental & Occupational",
+   "short": "Environment",
+   "order": 14,
+   "description": "External environmental and occupational exposures",
+   "n": 50,
+   "grades": {
+    "A": 4,
+    "B": 5,
+    "C": 7,
+    "D": 34
+   },
+   "n_in_prevent": 0,
+   "n_strong": 9,
+   "n_with_genetic": 0,
+   "n_with_trials": 9
+  },
+  {
+   "id": "novel_biomarkers",
+   "name": "Novel & Emerging Biomarkers",
+   "short": "Novel",
+   "order": 15,
+   "description": "Circulating biomarkers and omics measures reported but not in standard scores",
+   "n": 142,
+   "grades": {
+    "A": 6,
+    "B": 9,
+    "C": 35,
+    "D": 92
+   },
+   "n_in_prevent": 0,
+   "n_strong": 15,
+   "n_with_genetic": 0,
+   "n_with_trials": 50
+  }
+ ],
+ "factor_types": [
+  {
+   "id": "lab_test",
+   "name": "Lab test / biomarker",
+   "description": "Measured from blood/urine/tissue"
+  },
+  {
+   "id": "physical_parameter",
+   "name": "Physical parameter",
+   "description": "Measured on the body (BP, waist, weight)"
+  },
+  {
+   "id": "disease",
+   "name": "Disease / clinical condition",
+   "description": "A diagnosed comorbidity"
+  },
+  {
+   "id": "behavior",
+   "name": "Behavior / exposure",
+   "description": "Modifiable lifestyle or environmental exposure"
+  },
+  {
+   "id": "genetic",
+   "name": "Genetic / heritable",
+   "description": "Family history, variant, or genetic score"
+  },
+  {
+   "id": "imaging",
+   "name": "Imaging marker",
+   "description": "Detected by imaging"
+  },
+  {
+   "id": "demographic",
+   "name": "Demographic / social",
+   "description": "Non-modifiable demographic or social determinant"
+  }
+ ],
+ "harvest_sources": {
+  "pubmed_openalex_articles": 6441,
+  "clinical_trials": 5715,
+  "gwas_trait_assoc": 2797,
+  "gwas_gene_assoc": 3430
+ }
+}
