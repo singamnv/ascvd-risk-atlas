@@ -72,7 +72,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ id:
 
       {/* inputs table */}
       <h2 className="font-display" style={{ fontSize: 18, color: "var(--text)", margin: "0 0 12px" }}>Input variables ({c.n_inputs})</h2>
-      <div className="card table-scroll" style={{ overflow: "hidden", marginBottom: 26 }}>
+      <div className="card table-scroll" style={{ overflowX: "auto", marginBottom: 26 }}>
         <table className="data-table">
           <thead><tr><th>Input</th><th>Maps to atlas factor</th><th>Category</th><th>Grade</th><th>Note</th></tr></thead>
           <tbody>

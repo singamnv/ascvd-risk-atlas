@@ -23,7 +23,7 @@ export default function CalculatorsPage() {
       </p>
 
       {/* Ranking table */}
-      <div className="card table-scroll" style={{ overflow: "hidden", marginBottom: 20 }}>
+      <div className="card table-scroll" style={{ overflowX: "auto", marginBottom: 20 }}>
         <table className="data-table">
           <thead>
             <tr>

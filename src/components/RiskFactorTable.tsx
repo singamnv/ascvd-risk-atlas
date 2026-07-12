@@ -107,7 +107,7 @@ export default function RiskFactorTable({
       </div>
 
       {/* Table */}
-      <div className="card table-scroll" style={{ overflow: "hidden" }}>
+      <div className="card table-scroll" style={{ overflowX: "auto" }}>
         <table className="data-table">
           <thead>
             <tr>

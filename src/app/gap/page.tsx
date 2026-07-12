@@ -77,7 +77,7 @@ export default function GapPage() {
         <h2 className="font-display" style={{ fontSize: 18, color: "var(--text)", margin: "0 0 12px" }}>
           Highest-evidence omitted factors
         </h2>
-        <div className="card table-scroll" style={{ overflow: "hidden" }}>
+        <div className="card table-scroll" style={{ overflowX: "auto" }}>
           <table className="data-table">
             <thead>
               <tr>

@@ -62,7 +62,7 @@ export default function Home() {
         <p style={{ color: "var(--muted)", fontSize: 14, margin: "0 0 20px" }}>Each bar shows the count of distinct factors; the shaded portion is strongly-evidenced (grade A or B).</p>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {cats.map((c) => (
-            <Link key={c.id} href={`/table/?cat=${c.id}`} className={`cat-${c.id}`} style={{ display: "grid", gridTemplateColumns: "220px 1fr 60px", gap: 12, alignItems: "center" }}>
+            <Link key={c.id} href={`/table/?cat=${c.id}`} className={`cat-${c.id} cat-bar-row`} style={{ display: "grid", gridTemplateColumns: "220px 1fr 60px", gap: 12, alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13.5, color: "var(--text-2)" }}>
                 <span className="chip-dot" /> {CATEGORY_LABELS[c.id] ?? c.name}
               </div>

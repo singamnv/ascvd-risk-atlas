@@ -1,12 +1,28 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 // Main CoronaryAtlas site — the umbrella this app lives under.
 const CORONARY_ATLAS_URL = "https://coronaryatlas.com";
 
+const NAV: { href: string; label: string }[] = [
+  { href: "/", label: "Overview" },
+  { href: "/dashboard/", label: "Dashboard" },
+  { href: "/table/", label: "Risk Factors" },
+  { href: "/calculators/", label: "Risk Calculators" },
+  { href: "/about/", label: "Methodology" },
+];
+
 export default function AppBar() {
+  const pathname = usePathname() || "/";
+  const [open, setOpen] = useState(false);
+  // Close the mobile menu on route change.
+  useEffect(() => { setOpen(false); }, [pathname]);
+
   return (
     <div className="app-bar">
-      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 11, minWidth: 0 }}>
+      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 11, minWidth: 0 }} onClick={() => setOpen(false)}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logo.svg"
@@ -24,16 +40,37 @@ export default function AppBar() {
           </div>
         </div>
       </Link>
+
+      {/* Desktop nav */}
       <nav className="nav-desktop" style={{ display: "flex", gap: 18, marginLeft: "auto", alignItems: "center" }}>
-        <Link className="nav-link" href="/">Overview</Link>
-        <Link className="nav-link" href="/dashboard/">Dashboard</Link>
-        <Link className="nav-link" href="/table/">Risk Factors</Link>
-        <Link className="nav-link" href="/calculators/">Risk Calculators</Link>
-        <Link className="nav-link" href="/about/">Methodology</Link>
+        {NAV.map((n) => <Link key={n.href} className="nav-link" href={n.href}>{n.label}</Link>)}
         <a className="nav-link" href={CORONARY_ATLAS_URL} target="_blank" rel="noopener" style={{ color: "var(--accent)" }}>
           CoronaryAtlas ↗
         </a>
       </nav>
+
+      {/* Mobile hamburger */}
+      <button
+        className="nav-toggle"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          {open ? <><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></>
+                : <><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></>}
+        </svg>
+      </button>
+
+      {/* Mobile dropdown panel */}
+      {open && (
+        <nav className="nav-mobile">
+          {NAV.map((n) => <Link key={n.href} className="nav-link" href={n.href}>{n.label}</Link>)}
+          <a className="nav-link" href={CORONARY_ATLAS_URL} target="_blank" rel="noopener" style={{ color: "var(--accent)" }}>
+            CoronaryAtlas ↗
+          </a>
+        </nav>
+      )}
     </div>
   );
 }

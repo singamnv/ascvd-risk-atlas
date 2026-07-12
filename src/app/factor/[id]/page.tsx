@@ -159,7 +159,7 @@ function EvidenceSection({ title, sub, children }: { title: string; sub?: string
         <h2 className="font-display" style={{ fontSize: 18, color: "var(--text)", margin: 0 }}>{title}</h2>
         {sub && <span style={{ color: "var(--muted-2)", fontSize: 12.5 }}>{sub}</span>}
       </div>
-      <div className="card" style={{ padding: 16, overflow: "hidden" }}>{children}</div>
+      <div className="card" style={{ padding: 16, overflowX: "auto" }}>{children}</div>
     </section>
   );
 }
